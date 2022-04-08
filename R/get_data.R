@@ -8,7 +8,8 @@
 #' @author Taren Sanders
 #' @export
 get_data <- function() {
+  df_raw <-
+    cloudstoR::cloud_get("iPLAY Data/Barker_Wellbeing/Barker_Wellbeing.Rdata")
 
-  NULL
-
+  return(df_raw)
 }
