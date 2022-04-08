@@ -19,7 +19,7 @@ tar_plan(
   tar_target(analysis, analyse_data(df_clean)),
 
   # Plot of results
-  tar_target(plots, plot_results(analysis)),
+  tar_target(plots, plot_results(analysis, df_clean)),
 
   # Generate the report
   tar_render(report, "doc/report.Rmd")
