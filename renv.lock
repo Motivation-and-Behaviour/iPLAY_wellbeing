@@ -17,6 +17,14 @@
       "Hash": "4e348572ffcaa2fb1e610e7a941f6f3a",
       "Requirements": []
     },
+    "MASS": {
+      "Package": "MASS",
+      "Version": "7.3-55",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "c5232ffb549f6d7a04a152c34ca1353d",
+      "Requirements": []
+    },
     "Matrix": {
       "Package": "Matrix",
       "Version": "1.4-0",
@@ -77,6 +85,14 @@
       "Hash": "470851b6d5d0ac559e9d01bb352b4021",
       "Requirements": []
     },
+    "RColorBrewer": {
+      "Package": "RColorBrewer",
+      "Version": "1.1-2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "e031418365a7f7a766181ab5a41a5716",
+      "Requirements": []
+    },
     "Rcpp": {
       "Package": "Rcpp",
       "Version": "1.0.8.3",
@@ -84,6 +100,19 @@
       "Repository": "CRAN",
       "Hash": "32e79b908fda56ee57fe518a8d37b864",
       "Requirements": []
+    },
+    "UpSetR": {
+      "Package": "UpSetR",
+      "Version": "1.4.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "f6ef89503aaff474873f8bc1823894e1",
+      "Requirements": [
+        "ggplot2",
+        "gridExtra",
+        "plyr",
+        "scales"
+      ]
     },
     "XML": {
       "Package": "XML",
@@ -269,6 +298,14 @@
       "Hash": "92537c684a3d2eaa6bd8f65c28ef97f0",
       "Requirements": []
     },
+    "colorspace": {
+      "Package": "colorspace",
+      "Version": "2.0-2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "6baccb763ee83c0bd313460fdb8b8a84",
+      "Requirements": []
+    },
     "commonmark": {
       "Package": "commonmark",
       "Version": "1.7",
@@ -431,6 +468,14 @@
       "Hash": "83a8afdbe71839506baa9f90eebad7ec",
       "Requirements": []
     },
+    "farver": {
+      "Package": "farver",
+      "Version": "2.1.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "c98eb5133d9cb9e1622b8691487f11bb",
+      "Requirements": []
+    },
     "fastmap": {
       "Package": "fastmap",
       "Version": "1.1.0",
@@ -530,6 +575,25 @@
         "rstudioapi"
       ]
     },
+    "ggplot2": {
+      "Package": "ggplot2",
+      "Version": "3.3.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "d7566c471c7b17e095dd023b9ef155ad",
+      "Requirements": [
+        "MASS",
+        "digest",
+        "glue",
+        "gtable",
+        "isoband",
+        "mgcv",
+        "rlang",
+        "scales",
+        "tibble",
+        "withr"
+      ]
+    },
     "gh": {
       "Package": "gh",
       "Version": "1.3.0",
@@ -558,6 +622,24 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "4f2596dfb05dac67b9dc558e5c6fba2e",
+      "Requirements": []
+    },
+    "gridExtra": {
+      "Package": "gridExtra",
+      "Version": "2.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "7d7f283939f563670a697165b2cf5560",
+      "Requirements": [
+        "gtable"
+      ]
+    },
+    "gtable": {
+      "Package": "gtable",
+      "Version": "0.3.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "ac5c6baf7822ce8732b343f14c072c4d",
       "Requirements": []
     },
     "haven": {
@@ -661,6 +743,14 @@
       "Hash": "6154ec2223172bce8162d4153cda21f7",
       "Requirements": []
     },
+    "isoband": {
+      "Package": "isoband",
+      "Version": "0.2.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "7ab57a6de7f48a8dc84910d1eca42883",
+      "Requirements": []
+    },
     "jquerylib": {
       "Package": "jquerylib",
       "Version": "0.1.4",
@@ -709,6 +799,14 @@
         "xfun",
         "yaml"
       ]
+    },
+    "labeling": {
+      "Package": "labeling",
+      "Version": "0.4.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "3d5108641f47470611a32d0bdf357a72",
+      "Requirements": []
     },
     "languageserver": {
       "Package": "languageserver",
@@ -808,12 +906,73 @@
         "rlang"
       ]
     },
+    "mgcv": {
+      "Package": "mgcv",
+      "Version": "1.8-39",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "055265005c238024e306fe0b600c89ff",
+      "Requirements": [
+        "Matrix",
+        "nlme"
+      ]
+    },
     "mime": {
       "Package": "mime",
       "Version": "0.12",
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "18e9c28c1d3ca1560ce30658b22ce104",
+      "Requirements": []
+    },
+    "munsell": {
+      "Package": "munsell",
+      "Version": "0.5.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "6dfe8bf774944bd5595785e3229d8771",
+      "Requirements": [
+        "colorspace"
+      ]
+    },
+    "naniar": {
+      "Package": "naniar",
+      "Version": "0.6.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "4fffc0d02071a6150c1016fb8766224c",
+      "Requirements": [
+        "UpSetR",
+        "dplyr",
+        "forcats",
+        "ggplot2",
+        "glue",
+        "magrittr",
+        "norm",
+        "purrr",
+        "rlang",
+        "tibble",
+        "tidyr",
+        "viridis",
+        "visdat"
+      ]
+    },
+    "nlme": {
+      "Package": "nlme",
+      "Version": "3.1-155",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "74ad940dccc9e977189a5afe5fcdb7ba",
+      "Requirements": [
+        "lattice"
+      ]
+    },
+    "norm": {
+      "Package": "norm",
+      "Version": "1.0-10.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "7b5244ffdba7429e0e76961f0aa8f199",
       "Requirements": []
     },
     "openssl": {
@@ -878,6 +1037,16 @@
         "rprojroot",
         "rstudioapi",
         "withr"
+      ]
+    },
+    "plyr": {
+      "Package": "plyr",
+      "Version": "1.8.6",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "ec0e5ab4e5f851f6ef32cd1d1984957f",
+      "Requirements": [
+        "Rcpp"
       ]
     },
     "praise": {
@@ -1104,6 +1273,22 @@
       "Hash": "06c85365a03fdaf699966cc1d3cf53ea",
       "Requirements": []
     },
+    "scales": {
+      "Package": "scales",
+      "Version": "1.1.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "6f76f71042411426ec8df6c54f34e6dd",
+      "Requirements": [
+        "R6",
+        "RColorBrewer",
+        "farver",
+        "labeling",
+        "lifecycle",
+        "munsell",
+        "viridisLite"
+      ]
+    },
     "sodium": {
       "Package": "sodium",
       "Version": "1.2.0",
@@ -1291,6 +1476,26 @@
         "vctrs"
       ]
     },
+    "tidyr": {
+      "Package": "tidyr",
+      "Version": "1.2.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "d8b95b7fee945d7da6888cf7eb71a49c",
+      "Requirements": [
+        "cpp11",
+        "dplyr",
+        "ellipsis",
+        "glue",
+        "lifecycle",
+        "magrittr",
+        "purrr",
+        "rlang",
+        "tibble",
+        "tidyselect",
+        "vctrs"
+      ]
+    },
     "tidyselect": {
       "Package": "tidyselect",
       "Version": "1.1.2",
@@ -1371,6 +1576,43 @@
         "cli",
         "glue",
         "rlang"
+      ]
+    },
+    "viridis": {
+      "Package": "viridis",
+      "Version": "0.6.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "ee96aee95a7a563e5496f8991e9fde4b",
+      "Requirements": [
+        "ggplot2",
+        "gridExtra",
+        "viridisLite"
+      ]
+    },
+    "viridisLite": {
+      "Package": "viridisLite",
+      "Version": "0.4.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "55e157e2aa88161bdb0754218470d204",
+      "Requirements": []
+    },
+    "visdat": {
+      "Package": "visdat",
+      "Version": "0.5.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "f62b960320b18fdffb2f0f76bb65dbaf",
+      "Requirements": [
+        "dplyr",
+        "ggplot2",
+        "glue",
+        "magrittr",
+        "purrr",
+        "readr",
+        "tibble",
+        "tidyr"
       ]
     },
     "vroom": {
