@@ -18,7 +18,8 @@ tar_plan(
   # Analyse data
   tar_target(analysis, analyse_data(df_clean)),
 
-  # Plot of results
+  # Describe the results
+  tar_target(results_table, make_results_table(analysis)),
   tar_target(plots, plot_results(analysis, df_clean)),
 
   # Generate the report
