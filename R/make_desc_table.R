@@ -10,12 +10,13 @@
 make_desc_table <- function(df_clean) {
   df_clean <-
     df_clean %>%
-    dplyr::filter(time_point == 0) %>%
+    dplyr::filter(time_point == "Baseline") %>%
     dplyr::select(-cwb_who_total_f, -cid_id, -sid_id, -time_point, -sid_status)
 
   gtsummary::tbl_summary(df_clean,
     type = list(cdem_age ~ "continuous"),
     statistic = list(cdem_age ~ "{mean} ({sd})")
   ) %>%
-    modify_caption("Baseline characteristics of participants")
+    modify_caption("Baseline characteristics of participants") %>%
+    gtsummary::bold_labels()
 }

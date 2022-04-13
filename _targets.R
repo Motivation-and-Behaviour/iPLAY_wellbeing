@@ -23,5 +23,5 @@ tar_plan(
   tar_target(plots, plot_results(analysis, df_clean)),
 
   # Generate the report
-  tar_render(report, "doc/report.Rmd")
+  tar_render(report, "docs/index.Rmd")
 )

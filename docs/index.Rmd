@@ -1,0 +1,114 @@
+---
+title: "Effect of the iPLAY Program on Student Wellbeing"
+description: "A Moderation Analysis"
+date: "`r Sys.Date()`"
+author:
+  - first_name: "Taren"
+    last_name: "Sanders"
+    url: https://www.acu.edu.au/research-and-enterprise/our-research-institutes/institute-for-positive-psychology-and-education/our-people/dr-taren-sanders
+    affiliation: Australian Catholic University
+    affiliation_url: https://www.acu.edu.au
+    orcid_id: 0000-0002-4504-6008
+bibliography: References.bib
+repository_url: https://github.com/Motivation-and-Behaviour/iPLAY_wellbeing
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source(here::here("packages.R"))
+lapply(list.files(here::here("./R"), full.names = TRUE), source)
+```
+
+```{r load-targets, include=FALSE}
+tar_load(c(desc_table, results_table, plots, df_clean),
+  store = here::here("_targets")
+)
+```
+## Introduction
+
+The iPLAY Program is a whole-of-school physical activity intervention, designed to increase student's cardiorespiratory fitness [@lonsdaleScalingupEfficaciousSchoolbased2016].
+The program focused on six main areas, which were split between *curricular* and *non-curricular* components.
+The curricular components (those implemented by the classroom teacher) are: *Quality PE and School Sport* - providing teachers with the skills and confidence to teach active and engaging PE and school sport lessons; *Classroom Energisers* - encouraging teachers to implement short (less than 5 min) exercise breaks during class time; and *Physically Active Homework* - providing one or more homework activities each week which include physical activity.
+The non-curricular components are implemented by up to three *iPLAY Leaders*---teachers seeking leadership roles---in each school, and focus on changes to the school environment.
+The components include: *Active Playgroups* - changes to school policy or environment that promote more active break times; *Community Physical Activity Links* - using community sporting groups or providers to provide out-of-hours physical activity opportunities; and *Parents and Caregiver Engagement* - providing parents with information and support to get their children active.
+
+We evaluated iPLAY in two concurrent studies.
+In both studies, we collected data from students in Stage 2 (Years 3-4), teachers, and principals before the intervention ('baseline'), 12 months post-baseline (the length of the intervention), and 24 months post-baseline (to test for maintenance of effects).
+
+**Cluster-Randomised Controlled Trial (RCT):** In this study, 22 schools were recruit and matched based on school demographics.
+Half of the schools recieved iPLAY, while the other half were waitlisted to recieve iPLAY at the end of the study.
+We took measures of children's cardiorespiratory fitness, physical activity levels, school performance, and wellbeing, along with demographic information.
+
+**Dissemination Study:** To evaluate if iPLAY could be delivered 'at scale', we recruited an additional 115 schools who all recieved the iPLAY intervention.
+We collected less data from these students, having students complete only a short questionnaire on their self-reported physical activity, and their wellbeing.
+
+In our evaluation of the RCT data [@lonsdaleEffectScalableSchoolBased2021], we found that iPLAY was effective at increasing student's cardiorespiratory fitness.
+We also noted a small increase in student's wellbeing post-intervention, but owing to a small sample size, this effect was not statistically significant.
+In our evaluation of the dissemination study, we found statistically-significant evidence that iPLAY improved students wellbeing, compared to the students in the RCT control arm.
+
+Given that overall levels of wellbeing across the schools were relatively high, it seems plausible that iPLAY is having a larger benefit for students who have initially low levels of wellbeing.
+In this analysis, we test the hypothesis that students with low levels of wellbeing benefit more from the iPLAY intervention than students with high initial wellbeing.
+
+## Method
+
+### Analysis
+
+The outcome variable was students' wellbeing, as reported on the ten-item World Health Organisation's Health Behavior in School-aged Children questionnaire [@robertsHealthBehaviourSchoolaged2009].
+We used a mixed-effects model with a gaussian link function.
+Mixed-effects model allow us to include random effects for the student and school to account for the clustered study design.
+A three-way interaction term (intervention x time point x baseline wellbeing) was used to test for a moderation effects.
+Unadjusted and adjusted models were fit, with the latter adjusted for child age, sex,socioeconomic status, indigenous status, and school socioeconomic status and remoteness.
+An adjusted model is not stricly required, as the randomisation process should produce balanced covariates across the arms, but was included for the sake of confirming that the randomisation was successful.
+
+## Results
+
+### Sample Description
+
+```{r desc}
+desc_stats <-
+  df_clean %>%
+  dplyr::group_by(time_point) %>%
+  summarise(n = n()) %>%
+  mutate(n = format(n, big.mark = ","))
+```
+
+The sample consisted of `r desc_stats[[1,2]]` students at baseline, `r desc_stats[[2,2]]` at 12 months, and `r desc_stats[[3,2]]` at 24 months.
+A description of the sample is provided in Table \@ref(tab:desctable).
+
+```{r desctable}
+desc_table
+```
+### Analysis Results
+
+The result of the unadjusted model is shown in Table \@ref(tab:resultstable).
+A significant moderation effect of baseline wellbeing was observed at 24 months.
+Including the covariates did not change the results, so the remaining results are drawn from the unadjusted model.
+
+```{r resultstable}
+results_table$unadjusted
+```
+
+To interpret the three-way interaction effect, we plot the group trajectories at different levels of baseline wellbeing.
+In this case, we chose four levels to evaluate: students in the 10th (very low wellbeing), 20th (low wellbeing), 50th (i.e., at the median), and 80th (high wellbeing).
+These results are available in Figure \@ref(fig:resultsplot).
+
+```{r resultsplot, fig.cap = "Moderation effects of baseline wellbeing on children's wellbeing outcome.", layout="l-page"}
+plots
+```
+
+## Discussion Points
+
+There's a few interesting things to note here:
+
+* The 'normal' trend for wellbeing is demonstrated in the median trajectory of the control group.
+That is, wellbeing tends to be stable for the first 12 months, and then decreases at 24m.
+We could hypothesise lots of reasons for this.
+For example, children might be more likely to be entering puberty at this stage, or starting to feel the pressure of attending high-school next year.
+* There's a steep decline in wellbeing for students with initially high wellbeing.
+The control and intervention groups don't differ very much here.
+* There's a strong effect of the intervention on students with very low wellbeing, mostly at 24 months (the difference at 12m is not significant).
+This is consistent with most of the findings from our previous research.
+Even though iPLAY was a 12 month intervention, it seems that it took longer than this for the effects on students to appear.
