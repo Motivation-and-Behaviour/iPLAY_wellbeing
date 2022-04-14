@@ -11,16 +11,17 @@ tar_plan(
 
   # Clean and tidyset
   tar_target(df_clean, clean_data(df_raw)),
+  tar_target(quantiles, get_quantiles(df_clean)),
 
   # Create some descriptive tables and plots?
-  tar_target(desc_table, make_desc_table(df_clean)),
+  tar_target(desc_table, make_desc_table(df_clean, quantiles)),
 
   # Analyse data
   tar_target(analysis, analyse_data(df_clean)),
 
   # Describe the results
   tar_target(results_table, make_results_table(analysis)),
-  tar_target(plots, plot_results(analysis, df_clean)),
+  tar_target(plots, plot_results(analysis, df_clean, quantiles)),
 
   # Generate the report
   tar_render(report, "docs/index.Rmd")

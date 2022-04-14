@@ -83,12 +83,31 @@ desc_table
 ```
 ### Analysis Results
 
-The result of the unadjusted model is shown in Table \@ref(tab:resultstable).
+The result of the adjusted model is shown in Table \@ref(tab:resultstable).
 A significant moderation effect of baseline wellbeing was observed at 24 months.
-Including the covariates did not change the results, so the remaining results are drawn from the unadjusted model.
+
+<aside>
+You can find the unadjusted model [here](unadjusted_table.html).
+
+A version of the model retricted to those with initial scores of 30 or less is available [here](stratified_table.html).
+
+</aside>
 
 ```{r resultstable}
-results_table$unadjusted
+results_table$adjusted
+```
+```{r savestrat}
+gt::gtsave(
+  gtsummary::as_gt(results_table$strat),
+  here::here("docs", "stratified_table.html")
+)
+```
+
+```{r saveunadj}
+gt::gtsave(
+  gtsummary::as_gt(results_table$unadjusted),
+  here::here("docs", "unadjusted_table.html")
+)
 ```
 
 To interpret the three-way interaction effect, we plot the group trajectories at different levels of baseline wellbeing.
