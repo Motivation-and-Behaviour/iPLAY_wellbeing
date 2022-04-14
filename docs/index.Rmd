@@ -109,6 +109,7 @@ We could hypothesise lots of reasons for this.
 For example, children might be more likely to be entering puberty at this stage, or starting to feel the pressure of attending high-school next year.
 * There's a steep decline in wellbeing for students with initially high wellbeing.
 The control and intervention groups don't differ very much here.
-* There's a strong effect of the intervention on students with very low wellbeing, mostly at 24 months (the difference at 12m is not significant).
-This is consistent with most of the findings from our previous research.
+* Students with initially low wellbeing have a steep improvement at 12 months, regardless of if they recieve the intervention or not (this is consistent with the concept of *regression to the mean*).
+But, at 24 months there is a strong effect of the intervention on student wellbeing.
+* This is consistent with most of the findings from our previous research.
 Even though iPLAY was a 12 month intervention, it seems that it took longer than this for the effects on students to appear.
