@@ -12,8 +12,7 @@ plot_results <- function(analysis, df_clean, quantiles) {
     terms = c(
       "time_point",
       "intervention [0,1]",
-      glue::glue("cwb_who_total_f[{quantiles[1]},
-      {quantiles[2]},{quantiles[3]},{quantiles[4]}]")
+      "cwb_who_total_f[32,35,41,45]"
     )
   )
 
