@@ -31,7 +31,19 @@ make_desc_table <- function(df_clean, quantiles) {
   gtsummary::tbl_summary(df_clean_table,
     by = wellbeing_group,
     type = list(cdem_age ~ "continuous"),
-    statistic = list(cdem_age ~ "{mean} ({sd})")
+    statistic = list(cdem_age ~ "{mean} ({sd})"),
+    label = list(
+      cdem_age ~ "Child Age",
+      cdem_bornaus ~ "Child Born in Australia",
+      cdem_atsi ~ "Child Indigenous Status",
+      cdem_books ~ "Number of Books in Home",
+      cdem_lang ~ "Language Spoken at Home",
+      cdem_sex ~ "Child Sex",
+      cdem_wealth ~ "Child's Perceived Wealth",
+      sdem_icsea ~ "School ICSEA",
+      sdem_remote ~ "School Remoteness",
+      cwb_who_total ~ "Wellbeing Score"
+    )
   ) %>%
     gtsummary::modify_caption("Baseline characteristics of participants") %>%
     gtsummary::bold_labels() %>%
