@@ -23,8 +23,8 @@ plot_results <- function(analysis, df_clean, quantiles) {
     `45` = "High\n(80th Percentile)"
   ) # TODO: Can this be un-hardcoded?
 
-  ggplot(pr, aes(x, predicted, colour = group, group = group)) +
-    geom_line() +
+  p1 <- ggplot(pr, aes(x, predicted, colour = group, group = group)) +
+    geom_line(size = 1) +
     facet_wrap(~facet, ncol = 4, labeller = as_labeller(wb_categories)) +
     scale_fill_manual(
       name = "",
@@ -47,4 +47,33 @@ plot_results <- function(analysis, df_clean, quantiles) {
       legend.position = "bottom",
       text = element_text(family = "sans")
     )
+
+  p2 <- ggplot(
+    pr %>% dplyr::filter(facet == 32),
+    aes(x, predicted, colour = group, group = group)
+  ) +
+    geom_line(size = 2) +
+    scale_fill_manual(
+      name = "",
+      labels = c("Control", "Intervention"),
+      values = c(tidyMB::iplay_pal()[[1]], tidyMB::iplay_pal()[[2]])
+    ) +
+    scale_colour_manual(
+      name = "",
+      labels = c("Control", "Intervention"),
+      values = c(tidyMB::iplay_pal()[[1]], tidyMB::iplay_pal()[[2]])
+    ) +
+    labs(
+      y = "Predicted Student Wellbeing",
+      x = "Time Point",
+      title = "Effect of the iPLAY Program on Student Wellbeing",
+      subtitle = "Moderation by Initial Wellbeing"
+    ) +
+    tidyMB::theme_mb() +
+    theme(
+      legend.position = "bottom",
+      text = element_text(family = "sans")
+    )
+
+  return(list("all" = p1, "low" = p2))
 }

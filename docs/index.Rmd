@@ -115,7 +115,13 @@ In this case, we chose four levels to evaluate: students in the 10th (very low w
 These results are available in Figure \@ref(fig:resultsplot).
 
 ```{r resultsplot, fig.cap = "Moderation effects of baseline wellbeing on children's wellbeing outcome.", layout="l-page"}
-plots
+plots$all
+```
+
+A plot focusing on jus the children with low baseline wellbeing is show in Figure \@ref(fig:lowplot).
+
+```{r lowplot, fig.cap = "Effect of the iPLAY intervention on children with low wellbeing."}
+plots$low
 ```
 
 ## Discussion Points
